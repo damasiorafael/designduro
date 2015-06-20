@@ -44,7 +44,7 @@
                         <th class="col-id">ID</th>
                         <th class="col-categoria">Categoria</th>
                         <th class="col-name">Nome</th>
-                        <th class="col-name">Descricao</th>
+                        <th class="col-descricao">Descricao</th>
                         <th class="col-preco">Preço</th>
                         <th class="col-data">Imagem</th>
                         <th class="col-acoes">&nbsp;</th>
@@ -57,13 +57,12 @@
                                                           produtos.nome AS produto,
                                                           produtos.texto AS descricao,
                                                           produtos.preco AS preco,
+                                                          produtos.imagem_destaque AS imagem_destaque,
                                                           categorias.nome AS categoria
                                                         FROM
                                                           produtos
                                                         LEFT JOIN
                                                           categorias ON categorias.id = produtos.id_categoria
-                                                        LEFT JOIN
-                                                          produtos_imagens ON produtos_imagens.id_produto = produtos.id
                                                         ORDER BY
                                                         id ASC";
                         $resultConsultaProdutos  = consulta_db($sqlConsultaProdutos);
@@ -71,62 +70,17 @@
                       ?>
                           <tr>
                             <td><?php echo $consultaProdutos->id; ?></td>
-                            <td><?php echo $consultaProdutos->nome; ?></td>
+                            <td><?php echo $consultaProdutos->categoria; ?></td>
+                            <td><?php echo $consultaProdutos->produto; ?></td>
+                            <td><?php echo $consultaProdutos->descricao; ?></td>
+                            <td>R$<?php echo $consultaProdutos->preco; ?></td>
                             <td>
-                              <?php
-                                $sqlConsultaInstituicao     = "SELECT * FROM instituicoes WHERE status = 1 AND id = $consultaProgramas->id_instituicao LIMIT 1";
-                                $resultConsultaInstituicao  = consulta_db($sqlConsultaInstituicao);
-                                while($consultaInstituicao  = mysql_fetch_object($resultConsultaInstituicao)){
-                                  echo $consultaInstituicao->nome;
-                                }
-                              ?>
-                              /<?php echo $consultaProgramas->cidade; ?> - <?php echo strtoupper($consultaProgramas->estado); ?></td>
-                            <td>
-                              <div class="content-tags type-tags col-md-12">
-                                <?php
-                                  if($consultaProgramas->fl_mestrado == 1){
-                                ?>
-                                    <span class="tag tag-mestrado col-md-12">MESTRADO</span>
-                                <?php
-                                  }
-                                ?>
-                                <?php
-                                  if($consultaProgramas->fl_doutorado == 1){
-                                ?>
-                                    <span class="tag tag-doutorado col-md-12">DOUTORADO</span>
-                                <?php
-                                  }
-                                ?>
-                              </div>
+                              <img src="../uploads/<?php echo $consultaProdutos->imagem_destaque; ?>" width="150" />
                             </td>
                             <td>
-                              <?php echo formata_data($consultaProgramas->data); ?>
-                            </td>
-                            <td>
-                              <?php
-                                if($consultaProgramas->status == 1){
-                              ?>
-                                  <a href="programas-acoes-status.php?id=<?php echo $consultaProgramas->id; ?>&status=<?php echo $consultaProgramas->status; ?>" class="btn btn-block btn-success btn-xs btn-status">ATIVO</a>
-                              <?php
-                                } else {
-                              ?>
-                                  <a href="programas-acoes-status.php?id=<?php echo $consultaProgramas->id; ?>&status=<?php echo $consultaProgramas->status; ?>" class="btn btn-block btn-danger btn-xs btn-status">INATIVO</a>
-                              <?php
-                                }
-                              ?>
-                            </td>
-                            <td>
-                              <a href="programa.php?id=<?php echo $consultaProgramas->id; ?>" class="btn btn-info btn-xs"><i class="fa fa-plus"></i> Ver mais</a>
-                              <?php 
-                                if($_SESSION['nivel_acesso'] == "SUPER ADMIN" || $_SESSION['nivel_acesso'] == "ADMIN" || $_SESSION['nivel_acesso'] == "PUBLISHER"){
-                              ?>
-                                  <a href="programas-edit.php?id=<?php echo $consultaProgramas->id; ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Editar</a>
-                              <?php
-                                }
-                                if($_SESSION['nivel_acesso'] == "SUPER ADMIN" || $_SESSION['nivel_acesso'] == "ADMIN"){
-                              ?>
-                                  <a href="programas-acoes-delete.php?id=<?php echo $consultaProgramas->id; ?>" class="btn-delete btn btn-danger btn-xs"><i class="fa fa-times"></i> Excluir</a>
-                              <?php } ?>
+                              <a href="produto.php?id=<?php echo $consultaProdutos->id; ?>" class="btn btn-info btn-xs"><i class="fa fa-plus"></i> Ver mais</a>
+                              <a href="produtos-edit.php?id=<?php echo $consultaProdutos->id; ?>" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Editar</a>
+                              <a href="produtos-acoes-delete.php?id=<?php echo $consultaProdutos->id; ?>" class="btn-delete btn btn-danger btn-xs"><i class="fa fa-times"></i> Excluir</a>
                             </td>
                           </tr>
                       <?php } ?>
@@ -134,10 +88,10 @@
                     <tfoot>
                       <tr>
                         <th class="col-id">ID</th>
+                        <th class="col-categoria">Categoria</th>
                         <th class="col-name">Nome</th>
-                        <th class="col-instituicao">Material</th>
-                        <th class="col-tipo">Peso</th>
-                        <th class="col-data">Texto</th>
+                        <th class="col-descricao">Descricao</th>
+                        <th class="col-preco">Preço</th>
                         <th class="col-data">Imagem</th>
                         <th class="col-acoes">&nbsp;</th>
                       </tr>
@@ -165,22 +119,6 @@
         
         $(".btn-delete").on("click", function(){
             var conf = confirm("Tem certeza que deseja excluir este registro?");
-            if(conf){
-                return true;
-            } else {
-                return false;
-            }
-        });
-
-        $(".btn-status").on("click", function(e){
-            <?php 
-              if($_SESSION['nivel_acesso'] == "VIEWER"){
-            ?>
-                e.stopPropagation();
-                e.preventDefault();
-                return false;
-            <?php } ?>
-            var conf = confirm("Tem certeza que deseja alterar este registro?");
             if(conf){
                 return true;
             } else {

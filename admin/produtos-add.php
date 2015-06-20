@@ -39,15 +39,15 @@
                     <form action="produtos-acoes.php" enctype="multipart/form-data" id="programas-add" class="programas-add" method="post" validate>
 
                       <div class="form-group col-xs-4">
-                        <label for="categoria">Categoria</label>
-                        <select id="area" name="categoria" class="form-control" required>
+                        <label for="id_categoria">Categoria</label>
+                        <select id="id_categoria" name="id_categoria" class="form-control" required>
                           <option value="">-- Selecione --</option>
                           <?php
                             $sqlConsultaCategorias      = "SELECT * FROM categorias";
                             $resultConsultaCategorias   = consulta_db($sqlConsultaCategorias);
                             while($consultaCategorias   = mysql_fetch_object($resultConsultaCategorias)){
                           ?>
-                              <option value="<?php echo $consultaCategorias->id; ?>" <?php if(isset($_SESSION['categoria']) && $_SESSION['categoria'] == $consultaCategorias->id) echo "selected"; ?>><?php echo utf8_encode($consultaCategorias->nome); ?></option>
+                              <option value="<?php echo $consultaCategorias->id; ?>" <?php if(isset($_SESSION['id_categoria']) && $_SESSION['id_categoria'] == $consultaCategorias->id) echo "selected"; ?>><?php echo utf8_encode($consultaCategorias->nome); ?></option>
                           <?php
                             }
                           ?>
@@ -77,6 +77,12 @@
                       <div class="form-group col-xs-12">
                         <label for="link">Link do Pay Pal</label>
                         <input type="text" id="link" name="link" placeholder="Link do Pay Pal" class="form-control" value="<?php if(isset($_SESSION['link'])) echo $_SESSION['link']; ?>" required>
+                      </div>
+
+                      <div class="form-group form-group-textarea col-xs-12">
+                        <label for="imagem_destaque">Imagem de Destaque</label>
+                        <input type="file" id="imagem_destaque" name="imagem_destaque" required>
+                        <p class="help-block">A imagem deve ter no máximo 500kb!</p>
                       </div>
 
                       <div class="form-group form-group-textarea col-xs-12">

@@ -70,7 +70,7 @@
                             <div class="product-info">
                               <a class="product-title" href="produto.php?id=<?php echo $consultaProdutos->id; ?>">
                                 <?php echo $consultaProdutos->produto; ?>
-                                <span class="label label-warning pull-right"><?php echo $consultaProdutos->categoria; ?>" /></span>
+                                <span class="label label-warning pull-right"><?php echo $consultaProdutos->categoria; ?></span>
                               </a>
                               <span class="product-description">
                                 <?php echo substr(strip_tags($consultaProdutos->descricao),0,300); ?>
