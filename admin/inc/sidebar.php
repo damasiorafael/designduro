@@ -27,8 +27,8 @@
                 <span class="label label-primary pull-right">3</span>
               </a>
             </li>
-            <li class="treeview">
-              <a href="">
+            <li>
+              <a href="produtos.php">
                 <i class="fa fa-th"></i>
                 <span>Produtos</span>
                 <span class="label label-primary pull-right">
@@ -44,10 +44,6 @@
                   ?>
                 </span>
               </a>
-              <ul class="treeview-menu">
-                <li><a href="produtos.php"><i class="fa fa-circle-o"></i> Produtos</a></li>
-                <li><a href="produtos-imagens.php"><i class="fa fa-circle-o"></i> Imagens de Produtos</a></li>
-              </ul>
             </li>
             <li>
               <a href="noticias.php">

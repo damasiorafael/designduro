@@ -307,3 +307,82 @@
 .col-subtitulo {
   width: 300px;
 }
+
+
+/* AJUSTES DESIGN DURO */
+/* ALTERACOES DAMASIO */
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {}
+
+body > .header .navbar {
+  height: 80px;
+}
+
+.dropdown.user.user-menu > a, .dropdown.messages-menu > a { height: 80px!important; line-height: 45px;}
+body > .header .navbar .nav > li > a > .label { top: 24px; right: 4px;}
+body > .header .navbar .nav > li > a:hover > .label { top: 24px;}
+
+.menu-right { float: left;}
+
+.container-menu-itens { float: left; position: absolute; left: 100px;}
+.menu-admin { margin-top: 25px;}
+.menu-admin li { list-style: none; float: left; margin-right: 20px;}
+.menu-admin li a { font-size: 18px;}
+.menu-admin li a:hover { text-shadow: 1px 1px 5px #fff;}
+.menu-admin li a:active { background: none!important;}
+.menu-admin li a:visited { background: none!important;}
+.menu-admin li a:over { background: none!important;}
+.menu-admin li a:focus { background: none!important;}
+
+.button.label-danger { cursor: pointer;}
+.dataTables_info { padding-left: 9px;}
+
+.link-no-efeito {}
+.link-no-efeito:hover { background: none!important;}
+
+.dataTables_length { padding-left: 8px;}
+
+label.error { color: #F00; font-weight: normal; font-size: 12px;}
+
+.deleteItens, .deleteItensPortfolio { cursor: pointer; position: absolute; right: 20px; top: 20px; padding: 10px; background: #d9534f;}
+
+.deleteItens.bt-disable, .deleteItensPortfolio.bt-disable { background: #CCC; color: #999; cursor: default;}
+
+.listImagensPortfolio { list-style: none; width: 292px; float: left; padding: 0;}
+.listImagensPortfolio li { float: left; width: 70px; margin-bottom: 3px; margin-right: 5px!important; position: relative;}
+
+.box-form { position: relative;}
+.box-form-fake { position: absolute; top: 150px; left: 10px; width: calc(100% - 20px);}
+.wysihtml5-sandbox {}
+
+#tx_portfolio { visibility: hidden; height: 170px;}
+
+.btn-edit-port, .btn-salva-port { cursor: pointer; font-size: 22px; color: #00a69c;}
+.btn-edit-port:hover, .btn-salva-port:hover { color: #0C0;}
+
+.btn-canc-port { color: #DBDBEA; cursor: pointer; font-size: 22px; display: none; float: left;}
+.btn-canc-port:hover { color: #F00;}
+
+.btn-salva-port { display: none; float: left;}
+
+.btn-delete-port { color: #F00; cursor: pointer; font-size: 22px; float: left; display: none; position: absolute; top: 2px; right: 2px;}
+.listImagensPortfolio li:hover .btn-delete-port { display: block;}
+.btn-delete-port:hover { color: #DBDBEA;}
+
+.esconde { display: none!important;}
+.mostra { display: ;}
+
+.edit_tit_portfolio { width: 100px!important;}
+.edit_tx_portfolio { width: 237px!important; height: 170px!important;}
+
+.inc-mais-imagem { cursor: pointer; width: auto!important;}
+.inc-mais-imagem:hover {}
+
+.nova-imagem-edit { width: 70px; height: 39px; background: #3c8dbc;}
+
+.box-header-imagens-produtos { margin-bottom: 40px!important;}
+.liNovaImagem { width: 100%!important;}
+
+
+.dd-video { width: 400px; margin: 5px 0 30px 0;}
+
+.dd-imagens { margin: 5px 0 30px 0;}

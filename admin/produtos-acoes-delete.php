@@ -6,16 +6,17 @@
     $id = $_REQUEST['id'];
 
     function deletaArquivo($id){
-        $sqlConsulta    = "SELECT imagem_destaque FROM produtos WHERE id = $id";
+        $sqlConsulta    = "SELECT * FROM produtos_imagens WHERE id_produto = $id";
         $resultConsulta = consulta_db($sqlConsulta);
         while($consulta = mysql_fetch_object($resultConsulta)){
-            $arquivo = "../uploads/".$consulta->imagem_destaque;
+            $arquivo = "../uploads/".$consulta->imagem;
             if (unlink($arquivo)){
-                return true;
+
             } else {
                 return false;
             }
         }
+        return true;
     }
 
     function deletaItem($id){

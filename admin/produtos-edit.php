@@ -43,8 +43,9 @@
                                               produtos.preco,
                                               produtos.peso,
                                               produtos.texto AS descricao,
-                                              produtos.imagem_destaque AS imagem,
                                               produtos.link,
+                                              produtos.video,
+                                              produtos.ordem_video,
                                               categorias.nome AS categoria,
                                               categorias.id AS id_categoria
                                             FROM
@@ -102,11 +103,14 @@
                           <input type="text" id="link" name="link" placeholder="Link do Pay Pal" class="form-control" value="<?php echo $consultaProduto->link; ?>" required>
                         </div>
 
-                        <div class="form-group form-group-textarea col-xs-12">
-                          <label for="imagem_destaque">Imagem de Destaque</label>
-                          <input type="file" id="imagem_destaque" name="imagem_destaque">
-                          <img src="../uploads/<?php echo $consultaProduto->imagem; ?>" width="150" />
-                          <p class="help-block">A imagem deve ter no máximo 500kb!</p>
+                        <div class="form-group col-xs-10">
+                          <label for="video">Embed de vídeo</label>
+                          <input type="text" id="video" name="video" placeholder="Embedo de vídeo" class="form-control" value="<?php echo $consultaProduto->video; ?>" required>
+                        </div>
+
+                        <div class="form-group col-xs-2">
+                          <label for="ordem_video">Ordem do vídeo</label>
+                          <input type="text" id="ordem_video" name="ordem_video" placeholder="Ordem do vídeo" class="form-control" value="<?php echo $consultaProduto->ordem_video; ?>" required>
                         </div>
 
                         <div class="form-group form-group-textarea col-xs-12">

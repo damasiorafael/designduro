@@ -41,8 +41,8 @@
                                               produtos.preco,
                                               produtos.peso,
                                               produtos.texto AS descricao,
-                                              produtos.imagem_destaque AS imagem,
                                               produtos.link,
+                                              produtos.video,
                                               categorias.nome AS categoria
                                             FROM
                                               produtos
@@ -55,7 +55,6 @@
                 ?>
                     <div class="box-header">
                       <h3 class="box-title"><?php echo $consultaProduto->nome; ?></h3>
-                      <a class="btn-add btn btn-app btn-success pull-right" href="produtos-add.php"><i class="fa fa-plus"></i> Adicionar Novo</a>
                       <a class="btn-add btn btn-app btn-warning pull-right" href="produtos-edit.php?id=<?php echo $consultaProduto->id; ?>"><i class="fa fa-pencil"></i> Editar</a>
                     </div><!-- /.box-header -->
                     <div class="box-body">
@@ -89,17 +88,32 @@
                                       </dd>
 
                                       <dt>Peso</dt>
-                                      <dd><?php echo $consultaProduto->peso; ?></dd>
+                                      <dd><?php echo $consultaProduto->peso; ?> kg</dd>
+
+                                      <dt>Preço</dt>
+                                      <dd>R$ <?php echo $consultaProduto->preco; ?></dd>
 
                                       <dt>Descrição</dt>
                                       <dd><?php echo $consultaProduto->descricao; ?></dd>
 
                                       <dt>Link do Pay Pal</dt>
-                                      <dd><?php echo $consultaProduto->link; ?></dd>
+                                      <dd><a href="<?php echo $consultaProduto->link; ?>" target="_blank"><?php echo $consultaProduto->link; ?></a></dd>
 
-                                      <dt>Imagem de Destaque</dt>
-                                      <dd>
-                                        <img src="../uploads/<?php echo $consultaProduto->imagem; ?>" width="150">
+                                      <dt>Vídeo</dt>
+                                      <dd class="dd-video"><?php echo $consultaProduto->video; ?></dd>
+
+                                      <dt>Imagens</dt>
+                                      <dd class="dd-imagens">
+                                        <?php
+                                            $sqlConsultaImagens   = "SELECT * FROM produtos_imagens WHERE id_produto = $consultaProduto->id ORDER by id ASC";
+                                            $resultConsultaImagens  = consulta_db($sqlConsultaImagens);
+                                            while($consultaImagens = mysql_fetch_object($resultConsultaImagens)){
+                                            ?>
+                                                  
+                                             <img src="../uploads/<?php echo $consultaImagens->imagem; ?>" width="200" alt="" title="<?php echo $consultaProduto->produto; ?>" rel="<?php echo $consultaImagens->id; ?>" />
+                                        <?php
+                                            }
+                                        ?>
                                       </dd>
                                     </dl>
                                   </div>

@@ -43,18 +43,14 @@
                                                 `produtos`.id AS id,
                                                 `produtos`.nome AS produto,
                                                 `produtos`.texto AS descricao,
-                                                `categorias`.nome AS categoria,
-                                                `produtos_imagens`.imagem AS imagem
+                                                `produtos`.imagem_destaque AS imagem,
+                                                `categorias`.nome AS categoria
                                                FROM
                                                 `produtos`
                                                LEFT JOIN
                                                 `categorias`
                                                ON
                                                 `produtos`.id_categoria = `categorias`.id
-                                               LEFT JOIN
-                                                `produtos_imagens`
-                                               ON
-                                                `produtos_imagens`.id_produto = `produtos`.id
                                                ORDER BY
                                                 `produtos`.id
                                                DESC LIMIT 8";
@@ -65,7 +61,7 @@
                     ?>
                           <li class="item">
                             <div class="product-img">
-                              <img src="uploads/<?php echo $consultaProdutos->imagem; ?>" />
+                              <img src="../uploads/<?php echo $consultaProdutos->imagem; ?>" />
                             </div>
                             <div class="product-info">
                               <a class="product-title" href="produto.php?id=<?php echo $consultaProdutos->id; ?>">
