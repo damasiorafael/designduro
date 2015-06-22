@@ -10,12 +10,10 @@ if($_SERVER['SERVER_NAME'] == "localhost"){
 	$pass	= "";
 	$bd		= "designduro";
 } else {
-	/*
 	$host 	= "localhost";
-	$user	= "pgsskroton";
-	$pass	= "PgssKroton@2015";
-	$bd		= "psskroton";
-	*/
+	$user	= "designduro";
+	$pass	= "DesignDuro2015";
+	$bd		= "designduro";
 }
 
 $con = mysql_connect($host,$user,$pass);
