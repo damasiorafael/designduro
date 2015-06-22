@@ -313,14 +313,6 @@
 /* ALTERACOES DAMASIO */
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {}
 
-body > .header .navbar {
-  height: 80px;
-}
-
-.dropdown.user.user-menu > a, .dropdown.messages-menu > a { height: 80px!important; line-height: 45px;}
-body > .header .navbar .nav > li > a > .label { top: 24px; right: 4px;}
-body > .header .navbar .nav > li > a:hover > .label { top: 24px;}
-
 .menu-right { float: left;}
 
 .container-menu-itens { float: left; position: absolute; left: 100px;}

@@ -46,16 +46,16 @@
               </a>
             </li>
             <li>
-              <a href="noticias.php">
+              <a href="slides.php">
                 <i class="fa fa-laptop"></i>
-                <span>Notícias</span>
+                <span>Slides</span>
                 <span class="label label-primary pull-right">
                   <?php
-                    $sqlConsultaNoticiasMenu     = "SELECT id FROM noticias WHERE status = 1";
-                    $resultConsultaNoticiasMenu  = consulta_db($sqlConsultaNoticiasMenu);
-                    $numRowsNoticiasMenu         = mysql_num_rows($resultConsultaNoticiasMenu);
-                    if($numRowsNoticiasMenu > 0){
-                      echo $numRowsNoticiasMenu;
+                    $sqlConsultaSlidesMenu     = "SELECT id FROM slides";
+                    $resultConsultaSlidesMenu  = consulta_db($sqlConsultaSlidesMenu);
+                    $numRowsSlidesMenu         = mysql_num_rows($resultConsultaSlidesMenu);
+                    if($numRowsSlidesMenu > 0){
+                      echo $numRowsSlidesMenu;
                     } else {
                       echo "0";
                     }
@@ -64,72 +64,18 @@
               </a>
             </li>
             <li>
-              <a href="teses.php">
-                <i class="fa fa-bookmark"></i>
-                <span>Teses</span>
-                <span class="label label-primary pull-right">
-                  <?php
-                    if($idInstMenu != ""){
-                      $sqlConsultaTesesMenu     = "SELECT `programas_teses`.id FROM programas_teses LEFT JOIN `programas` ON `programas`.id = `programas_teses`.id WHERE `programas`.id_instituicao = $idInstMenu";
-                    } else {
-                      $sqlConsultaTesesMenu     = "SELECT id FROM programas_teses";
-                    }
-                    $resultConsultaTesesMenu  = consulta_db($sqlConsultaTesesMenu);
-                    $numRowsTesesMenu         = mysql_num_rows($resultConsultaTesesMenu);
-                    if($numRowsTesesMenu > 0){
-                      echo $numRowsTesesMenu;
-                    } else {
-                      echo "0";
-                    }
-                  ?>
-                </span>
+              <a href="citacao.php">
+                <i class="fa fa-comment"></i>
+                <span>Citação</span>
+                <span class="label label-primary pull-right">1</span>
               </a>
             </li>
 
             <li>
-              <a href="dissertacoes.php">
-                <i class="fa fa-bookmark"></i>
-                <span>Dissertações</span>
-                <span class="label label-primary pull-right">
-                  <?php
-                    if($idInstMenu != ""){
-                      $sqlConsultaDissertacoesMenu     = "SELECT `programas_dissertacoes`.id FROM programas_dissertacoes LEFT JOIN `programas` ON `programas`.id = `programas_dissertacoes`.id WHERE `programas`.id_instituicao = $idInstMenu";
-                    } else {
-                      $sqlConsultaDissertacoesMenu     = "SELECT id FROM programas_dissertacoes";
-                    }
-                    $resultConsultaDissertacoesMenu  = consulta_db($sqlConsultaDissertacoesMenu);
-                    $numRowsDissertacoesMenu         = mysql_num_rows($resultConsultaDissertacoesMenu);
-                    if($numRowsDissertacoesMenu > 0){
-                      echo $numRowsDissertacoesMenu;
-                    } else {
-                      echo "0";
-                    }
-                  ?>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a href="arquivos.php">
-                <i class="fa fa-files-o"></i>
-                <span>Documentos</span>
-                <span class="label label-primary pull-right">
-                  <?php
-                    if($idInstMenu != ""){
-                      $idInstMenu;
-                      $sqlConsultaArquivosMenu     = "SELECT DISTINCT `programas_arquivos`.id FROM programas_arquivos LEFT JOIN `programas` ON `programas`.id = `programas_arquivos`.id WHERE `programas`.id_instituicao = $idInstMenu";
-                    } else {
-                      $sqlConsultaArquivosMenu     = "SELECT id FROM programas_arquivos";
-                    }
-                    $resultConsultaArquivosMenu  = consulta_db($sqlConsultaArquivosMenu);
-                    $numRowsArquivosMenu         = mysql_num_rows($resultConsultaArquivosMenu);
-                    if($numRowsArquivosMenu > 0){
-                      echo $numRowsArquivosMenu;
-                    } else {
-                      echo "0";
-                    }
-                  ?>
-                </span>
+              <a href="sobre.php">
+                <i class="fa fa-group"></i>
+                <span>Sobre</span>
+                <span class="label label-primary pull-right">1</span>
               </a>
             </li>
           </ul>

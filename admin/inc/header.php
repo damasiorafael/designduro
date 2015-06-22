@@ -20,32 +20,15 @@
                   $consultaUser         = mysql_fetch_object($resultConsultaUser);
                 ?>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <?php
-                      if ($consultaUser->imagem != "") {
-                    ?>
-                      <img src="https://s3.amazonaws.com/pgsskroton-uploads/<?php echo $consultaUser->imagem; ?>" class="user-image" alt="User Image" />
-                  <?php
-                      } else {
-                  ?>
-                      <img src="dist/img/avatar04.png" class="user-image" alt="User Image"/>
-                  <?php } ?>
+                  <img src="dist/img/avatar04.png" class="user-image" alt="User Image"/>
                   <span class="hidden-xs"><?php echo $consultaUser->nome; ?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <?php
-                      if ($consultaUser->imagem != "") {
-                    ?>
-                        <img src="https://s3.amazonaws.com/pgsskroton-uploads/<?php echo $consultaUser->imagem; ?>" class="img-circle" alt="User Image" />
-                    <?php
-                        } else {
-                    ?>
-                        <img src="dist/img/avatar04.png" class="img-circle" alt="User Image"/>
-                    <?php } ?>
+                    <img src="dist/img/avatar04.png" class="img-circle" alt="User Image"/>
                     <p>
                       <?php echo $consultaUser->nome; ?>
-                      <small><?php echo $_SESSION['nivel_acesso']; ?></small>
                       <small>Último login - <?php echo formata_data($consultaUser->data_ultimo_login); ?></small>
                     </p>
                   </li>

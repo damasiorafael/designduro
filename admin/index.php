@@ -43,7 +43,7 @@
                                                 `produtos`.id AS id,
                                                 `produtos`.nome AS produto,
                                                 `produtos`.texto AS descricao,
-                                                `produtos`.imagem_destaque AS imagem,
+                                                MAX(`produtos_imagens`.imagem) AS imagem,
                                                 `categorias`.nome AS categoria
                                                FROM
                                                 `produtos`
@@ -51,6 +51,10 @@
                                                 `categorias`
                                                ON
                                                 `produtos`.id_categoria = `categorias`.id
+                                               LEFT JOIN
+                                                `produtos_imagens`
+                                               ON
+                                                `produtos_imagens`.id_produto = `produtos`.id
                                                ORDER BY
                                                 `produtos`.id
                                                DESC LIMIT 8";
@@ -94,7 +98,7 @@
                   </ul>
                 </div><!-- /.box-body -->
                 <div class="box-footer text-center">
-                  <a class="uppercase" href="programas.php">Ver todos os produtos</a>
+                  <a class="uppercase" href="produtos.php">Ver todos os produtos</a>
                 </div><!-- /.box-footer -->
               </div><!-- /.box -->
             </div>

@@ -19,12 +19,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            Imagens de Produtos
+            Produtos
             <small>Design Duro</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
-            <li class="active">Imagens de Produtos</li>
+            <li class="active">Produtos</li>
           </ol>
         </section>
 
