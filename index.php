@@ -104,7 +104,7 @@
 
 							<!-- PORTFOLIO ITEM -->
 							<li class="work-item <?php echo strtolower($consultaProdutos->categoria); ?>">
-								<a href="produto-detalhe.php?id=<?php echo $consultaProdutos->id; ?>">
+								<a href="produto-detalhe.php?produto=<?php echo $consultaProdutos->id; ?>">
 									<div class="work-image">
 										<?php
 											$sqlImagemProduto = "SELECT imagem FROM produtos_imagens WHERE id = $consultaProdutos->id_imagem";
