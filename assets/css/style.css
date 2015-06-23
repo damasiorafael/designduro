@@ -576,7 +576,7 @@ Navbar
 	color: #000;
 	display: block;
 	width: 100px;
-	height: 37px;
+	height: 36px;
 	background: url(../images/logo-design-duro.png) no-repeat 0 0;
 	transition: all 0.3s ease;
 	margin-top: 7px;
@@ -752,7 +752,7 @@ Sections
 
 .module-subtitle {
 	margin-bottom: 70px;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .module-title + .module-subtitle {
@@ -800,10 +800,12 @@ Content boxes
 	font-size: 14px;
 }
 
+#newsletter-mailchimp {
+	margin-top: 4em;
+}
+
 .mailchimp {
-	text-transform: inherit!important;
-    letter-spacing: 0!important;
-    margin-bottom: 0.5em!important;
+    margin-top: 1em!important;
 }
 
 .content-box-text {
@@ -1408,7 +1410,7 @@ Responsive Media Querries
 	}
 
 	.navbar-transparent .navbar-brand {
-		background-position: 0 -37px;
+		background-position: 0 -36px;
 		transition: all 0.3s ease;
 	}
 
@@ -1619,3 +1621,8 @@ Multi-columns-row
 	.multi-columns-row .col-lg-1:nth-child(12n + 13) { clear: left; }
 
 }
+
+
+
+
+.class-display-none { display: none!important;}
