@@ -10,7 +10,7 @@ if($_SERVER['SERVER_NAME'] == "localhost"){
 	$pass	= "";
 	$bd		= "designduro";
 } else {
-	$host 	= "localhost";
+	$host 	= "mysql03.redehost.com.br";
 	$user	= "designduro";
 	$pass	= "DesignDuro2015";
 	$bd		= "designduro";

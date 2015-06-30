@@ -56,7 +56,6 @@
 						$sqlProdutos = "SELECT DISTINCT
 											`produtos`.id,
 											`produtos`.nome,
-											MIN(`produtos_imagens`.id) AS id_imagem,
 											`categorias`.nome AS categoria
 										FROM
 											`produtos`
@@ -82,7 +81,7 @@
 								<a href="produto-detalhe.php?produto=<?php echo $consultaProdutos->id; ?>">
 									<div class="work-image">
 										<?php
-											$sqlImagemProduto = "SELECT imagem FROM produtos_imagens WHERE id = $consultaProdutos->id_imagem";
+											$sqlImagemProduto = "SELECT MIN(`produtos_imagens`.imagem) AS imagem FROM produtos_imagens WHERE id_produto = $consultaProdutos->id";
 											$resultImagemProduto = consulta_db($sqlImagemProduto);
 											$consultaimagemProduto = mysql_fetch_object($resultImagemProduto);
 										?>
