@@ -87,8 +87,8 @@
                                         <?php echo $consultaProduto->material; ?>
                                       </dd>
 
-                                      <dt>Peso</dt>
-                                      <dd><?php echo $consultaProduto->peso; ?> kg</dd>
+                                      <dt>Data</dt>
+                                      <dd><?php echo $consultaProduto->peso; ?></dd>
 
                                       <dt>Preço</dt>
                                       <dd>R$ <?php echo $consultaProduto->preco; ?></dd>

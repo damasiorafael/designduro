@@ -57,8 +57,8 @@
 							<h3 class="work-details-title font-alt"><?php echo $consultaProduto->nome; ?></h3>
 							<ul class="details-product">
 								<li class="font-inc"><strong>Material: </strong><?php echo $consultaProduto->material; ?></li>
+								<li class="font-inc"><strong>Data: </strong><?php echo $consultaProduto->peso; ?></li>
 								<li class="font-inc"><strong>Preço: </strong>R$ <?php echo $consultaProduto->preco; ?></li>
-								<li class="font-inc"><strong>Peso: </strong><?php echo $consultaProduto->peso; ?>kg</li>
 							</ul>
 							<p><a href="<?php echo $consultaProduto->link; ?>" class="btn btn-g btn-round" target="_blank">Comprar</a></p>
 						</div>

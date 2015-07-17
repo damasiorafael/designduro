@@ -57,7 +57,7 @@
 					<div class="col-sm-12">
 
 						<ul id="filters" class="filter font-inc hidden-xs">
-							<li><a href="#" data-filter="*" class="current wow fadeInUp">All</a></li>
+							<li><a href="#" data-filter="*" class="current wow fadeInUp">Todos</a></li>
 							<?php
 								$contSegundos = 2;
 								$sqlListaCategorias = "SELECT nome FROM categorias";

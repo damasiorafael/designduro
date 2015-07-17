@@ -70,7 +70,7 @@
                       </div>
 
                       <div class="form-group col-xs-4">
-                        <label for="peso">Peso (KG)</label>
+                        <label for="peso">Data</label>
                         <input type="text" id="peso" name="peso" placeholder="Peso" class="form-control" value="<?php if(isset($_SESSION['peso'])) echo $_SESSION['peso']; ?>" required>
                       </div>
 

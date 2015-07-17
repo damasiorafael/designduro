@@ -94,8 +94,8 @@
                         </div>
 
                         <div class="form-group col-xs-4">
-                          <label for="peso">Peso (KG)</label>
-                          <input type="text" id="peso" name="peso" placeholder="Peso" class="form-control" value="<?php echo $consultaProduto->peso; ?>" required>
+                          <label for="peso">Data</label>
+                          <input type="text" id="peso" name="peso" placeholder="Data" class="form-control" value="<?php echo $consultaProduto->peso; ?>" required>
                         </div>
 
                         <div class="form-group col-xs-12">

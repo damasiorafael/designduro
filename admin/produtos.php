@@ -73,8 +73,8 @@
                             </div>
 
                             <div class="form-group col-xs-6">
-                              <label for="peso">Peso (KG)</label>
-                              <input type="text" id="peso" name="peso" placeholder="Peso" class="form-control" value="<?php if(isset($_SESSION['peso'])) echo $_SESSION['peso']; ?>" required>
+                              <label for="peso">Data</label>
+                              <input type="text" id="peso" name="peso" placeholder="Data" class="form-control" value="<?php if(isset($_SESSION['peso'])) echo $_SESSION['peso']; ?>" required>
                             </div>
 
                             <div class="form-group col-xs-12">
