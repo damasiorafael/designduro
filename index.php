@@ -129,42 +129,42 @@
 
 		</section>
 		<!-- /PORTFOLIO -->
+		<?php
+			$sqlCitacao = "SELECT * FROM citacao WHERE status = 1";
+			$resultCitacao = consulta_db($sqlCitacao);
+			$numRowCitacao = mysql_num_rows($resultCitacao);
+			$consultaCitacao = mysql_fetch_object($resultCitacao);
+			if($numRowCitacao > 0){
+		?>
+				<!-- TESTIMONIAL -->
+				<section class="module-small">
 
-		<!-- TESTIMONIAL -->
-		<section class="module-small">
+					<div class="container">
 
-			<div class="container">
+						<div class="row">
 
-				<div class="row">
+							<!-- MODULE TITLE -->
+							<div class="col-sm-6">
+								<h2 class="module-title font-alt">Uma citação</h2>
+							</div>
+							<!-- /MODULE TITLE -->
 
-					<!-- MODULE TITLE -->
-					<div class="col-sm-6">
-						<h2 class="module-title font-alt">Uma citação</h2>
+							<!-- BLOCKQUOTE -->
+							<div class="col-sm-6">
+								<blockquote class="font-serif align-right">
+									<p>"<?php echo $consultaCitacao->texto; ?>"</p>
+									<p class="font-inc font-uppercase">- <?php echo $consultaCitacao->autor; ?></p>
+								</blockquote>
+							</div>
+							<!-- /BLOCKQUOTE -->
+
+						</div>
+
 					</div>
-					<!-- /MODULE TITLE -->
 
-					<!-- BLOCKQUOTE -->
-					<div class="col-sm-6">
-						<blockquote class="font-serif align-right">
-							<?php
-								$sqlCitacao = "SELECT * FROM citacao";
-								$resultCitacao = consulta_db($sqlCitacao);
-								$consultaCitacao = mysql_fetch_object($resultCitacao);
-							?>
-							<p>"<?php echo $consultaCitacao->texto; ?>"</p>
-							<p class="font-inc font-uppercase">- <?php echo $consultaCitacao->autor; ?></p>
-						</blockquote>
-					</div>
-					<!-- /BLOCKQUOTE -->
-
-				</div>
-
-			</div>
-
-		</section>
-		<!-- /TESTIMONIAL -->
-
-
+				</section>
+				<!-- /TESTIMONIAL -->
+		<?php } ?>
 		<?php
 			$sqlSobre = "SELECT * FROM sobre";
 			$resultSobre = consulta_db($sqlSobre);
