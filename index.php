@@ -102,7 +102,7 @@
 								<a href="produto-detalhe.php?produto=<?php echo $consultaProdutos->id; ?>">
 									<div class="work-image">
 										<?php
-											$sqlImagemProduto = "SELECT MIN(`produtos_imagens`.imagem) AS imagem FROM produtos_imagens WHERE id_produto = $consultaProdutos->id";
+											$sqlImagemProduto = "SELECT `produtos_imagens`.imagem AS imagem FROM produtos_imagens WHERE id_produto = $consultaProdutos->id LIMIT 1";
 											$resultImagemProduto = consulta_db($sqlImagemProduto);
 											$consultaimagemProduto = mysql_fetch_object($resultImagemProduto);
 										?>
